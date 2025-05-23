@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Link Downloader - New Tab</title>
+  <link rel="stylesheet" href="popup.css">
+  <style>
+    .container { max-width: 900px; margin: 32px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(56,65,74,0.07); border: 1px solid #e6e7ea; padding: 24px; }
+    .links-grid { width: 100%; border-collapse: collapse; margin-top: 16px; }
+    .links-grid th, .links-grid td { border: 1px solid #e6e7ea; padding: 8px; text-align: left; }
+    .links-grid th { background: #f5f7fb; }
+    .btn-confirm { margin-top: 16px; }
+  </style>
+</head>
+<body class="bg-light">
+  <div class="container">
+    <h2>Link Downloader</h2>
+    <label for="linksInput" class="form-label">Paste your links (one per line, comma, or space):</label>
+    <textarea id="linksInput" class="form-control tabler-textarea" placeholder="Paste up to 100 links here..."></textarea>
+    <button id="parseBtn" class="btn btn-primary tabler-btn mt-2">Add Links</button>
+    <div id="linksSection" style="display:none;">
+      <h3>Links to Download</h3>
+      <table class="links-grid" id="linksGrid">
+        <thead><tr><th style="width:40px"></th><th style="width:40px">#</th><th>Link</th><th style="width:40px"></th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <button id="confirmBtn" class="btn btn-success btn-confirm">Confirm & Start Download</button>
+      <div id="status" class="mt-2 text-success small"></div>
+    </div>
+  </div>
+  <script src="page.js"></script>
+</body>
+</html>
